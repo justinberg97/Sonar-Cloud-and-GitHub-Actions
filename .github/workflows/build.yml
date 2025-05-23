@@ -1,7 +1,7 @@
 name: Jest -> SonarCloud
 
 on:
-  workflow_dispatch:  # Manual trigger for debugging purposes
+  workflow_dispatch:
 
 jobs:
   sonarcloud:
@@ -19,7 +19,7 @@ jobs:
         run: npm run test
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@v1.9.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
